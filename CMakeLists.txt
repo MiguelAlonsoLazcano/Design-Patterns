@@ -4,4 +4,4 @@ project(DesignPatterns)
 set(CMAKE_CXX_STANDARD 14)
 include_directories(inc)
 
-add_executable(DesignPatterns main.cpp)
+add_executable(DesignPatterns main.cpp src/pimpl.cpp )

@@ -41,19 +41,48 @@ Observer - notification of state changes, implemented in many frameworks
 Language or platform specific, idioms are code level, example: pointers and templates in c++, garbage collector in java 
 
 ###### C++ Idioms
-RAII - Resource Acquisition Is Initialization 
+RAII - Resource Acquisition Is Initialization
+
 PIMPL - Pointer to implementation, decouple implementation from use, Improve compilation 
-Smart pointers - Overload ->, manage resources, provide proxies, Many uses in C++
-CRTP - Curiously recurring template pattern, static polymofphism , removes need for virtual func 
+
+SMART Pointers - Provide a mechanism to manage resources, it overload ->, manage resources, provide proxies, Many uses in C++
+
+CRTP - Curiously Recurring Template Pattern, static polymorphism, removes need for virtual func
 
 ##### Implementation
 Implementing patterns and idioms  - how a patter is implemented 
 
 RAII
-     
-	class Foo {
-		Foo() { // do something }
-		~Foo() { // undo something }
+
+	class Lock {
+		Lock() { // do something }
+		~Lock() { // undo something }
 	};
 
-State
+STATE
+
+	class Member {
+	    // Interface used to represent a
+	    // FreeTier, Basic, Premium Membership
+		Membership* role;
+	};
+
+PIMPL
+
+    class Container{
+        Impl *_impl
+        // ...
+    };
+
+    class Container::Impl {...};
+
+SMART PTR
+
+    class Ptr<T> {
+        T* p;
+    public:
+        // ...
+        T* operator->() const {
+            return p;
+        }
+    };
