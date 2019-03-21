@@ -6,7 +6,7 @@ Design Patter is a tested solution to a recurring problem in a particular contex
 patterns are design ideas, one implemented patterns encode best practices -  
 helps programmers to produce good code.
 
-#####Advantages: 
+##### Advantages:
 * Shared language, build on experience 
 * Avoid common pitfalls, avoid reinventing the wheel
 
@@ -22,7 +22,7 @@ Behavioral -relay on objects run time behavior-
     Object Based
     
 
-#####Patters 
+##### Patters
 MVC - Model, View, Controller , basis of many UIs, decouple UI from logic
 
 State - Represent changing object state, object states are classes, bank account 
@@ -37,16 +37,16 @@ Observer - notification of state changes, implemented in many frameworks
 		Observer -- register --> Object 
 		Observer <-- notifies -- Object
 		 
-#####Idioms 
+##### Idioms
 Language or platform specific, idioms are code level, example: pointers and templates in c++, garbage collector in java 
 
-######C++ Idioms 
+###### C++ Idioms
 RAII - Resource Acquisition Is Initialization 
 PIMPL - Pointer to implementation, decouple implementation from use, Improve compilation 
 Smart pointers - Overload ->, manage resources, provide proxies, Many uses in C++
 CRTP - Curiously recurring template pattern, static polymofphism , removes need for virtual func 
 
-#####Implementation
+##### Implementation
 Implementing patterns and idioms  - how a patter is implemented 
 
 RAII 
@@ -56,6 +56,3 @@ RAII
 	};
 
 State
-
- 
-*anti design patters,  
