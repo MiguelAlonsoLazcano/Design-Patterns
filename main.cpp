@@ -1,6 +1,6 @@
 #include <iostream>
 #include <mutex>
-#include "Lock.cpp"
+#include "Lock.h"
 
 int main() {
     std::mutex mt;
