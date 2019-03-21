@@ -49,7 +49,8 @@ CRTP - Curiously recurring template pattern, static polymofphism , removes need 
 ##### Implementation
 Implementing patterns and idioms  - how a patter is implemented 
 
-RAII 
+RAII
+     
 	class Foo {
 		Foo() { // do something }
 		~Foo() { // undo something }
