@@ -86,3 +86,8 @@ SMART PTR
             return p;
         }
     };
+
+CRTP
+
+    class B<T> { };
+    class D : public B<D> { };

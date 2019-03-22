@@ -1,8 +1,11 @@
 #include <iostream>
 #include <mutex>
+#include "crtp.h"
 #include "Lock.h"
 #include "Membership.h"
 #include "pimpl.h"
+#include "Resource.h"
+#include "smart.h"
 
 
 void test_rsc_adq_init_desin_pattern ()
@@ -49,12 +52,34 @@ void test_pointer_impl_design_pattern()
     std::cout << c[3] << std::endl;
 }
 
+void test_smart_ptr_design_pattern()
+{
+    std::cout << "Starting SMART PTR" << std::endl;
+
+    Ptr<Resource> pr(new Resource());
+    pr->do_something();
+
+}
+
+void test_polymorphism_typically_implementation(){
+    Base* base = new Derived();
+    std::cout << "Polymorphism: " << base->return_data() << std::endl;
+}
+
+void test_crtp_implementation(){
+    BaseCRTP<DerivedCRTP> base;
+    std::cout << "Static Polymorphism: " << base.return_data() << std::endl;
+}
+
 int main() {
     int op;
     std::cout << "Design Pattern" << std::endl;
     std::cout << "  1) RAII " << std::endl;
     std::cout << "  2) State" << std::endl;
     std::cout << "  3) PIMPL" << std::endl;
+    std::cout << "  4) SMART PTR" << std::endl;
+    std::cout << "  5) Polymorphism" << std::endl;
+    std::cout << "  6) CRTP Static Polymorphism" << std::endl;
     std::cout << "Test: ";
     std::cin >> op;
     switch (op){
@@ -66,6 +91,15 @@ int main() {
             break;
         case 3:
             test_pointer_impl_design_pattern();
+            break;
+        case 4:
+            test_smart_ptr_design_pattern();
+            break;
+        case 5:
+            test_polymorphism_typically_implementation();
+            break;
+        case 6:
+            test_crtp_implementation();
             break;
         default:
             std::cout << "not valid option - break!" << std::endl;
