@@ -1,8 +1,11 @@
 #include <iostream>
 #include <mutex>
 #include "crtp.h"
+#include "DCLSingleton.h"
 #include "Lock.h"
 #include "Membership.h"
+#include "MeyersSingleton.h"
+#include "NaiveSingleton.h"
 #include "pimpl.h"
 #include "Resource.h"
 #include "smart.h"
@@ -70,6 +73,17 @@ void test_crtp_implementation(){
     BaseCRTP<DerivedCRTP> base;
     std::cout << "Static Polymorphism: " << base.return_data() << std::endl;
 }
+void test_dcl_singleton_implementation(){
+    std::cout << "DCL Implementation " << std::endl;
+    DCLSingleton *inst = DCLSingleton::instance();
+    inst->do_it();
+}
+
+void test_meyer_singleton_implementation(){
+    std::cout << "Meyer Singleton " << std::endl;
+    MeyersSingleton& inst = MeyersSingleton::instance();
+    inst.do_it();
+}
 
 int main() {
     int op;
@@ -80,6 +94,8 @@ int main() {
     std::cout << "  4) SMART PTR" << std::endl;
     std::cout << "  5) Polymorphism" << std::endl;
     std::cout << "  6) CRTP Static Polymorphism" << std::endl;
+    std::cout << "  7) DCL Singleton" << std::endl;
+    std::cout << "  8) Meyer Singleton" << std::endl;
     std::cout << "Test: ";
     std::cin >> op;
     switch (op){
@@ -100,6 +116,12 @@ int main() {
             break;
         case 6:
             test_crtp_implementation();
+            break;
+        case 7:
+            test_dcl_singleton_implementation();
+            break;
+        case 8:
+            test_meyer_singleton_implementation();
             break;
         default:
             std::cout << "not valid option - break!" << std::endl;

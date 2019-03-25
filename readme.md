@@ -91,3 +91,10 @@ CRTP
 
     class B<T> { };
     class D : public B<D> { };
+
+Singletone
+
+    class NaiveSingelton
+    class DCLSingleton
+    class MeyersSingleton
+
