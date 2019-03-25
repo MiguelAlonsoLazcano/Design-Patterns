@@ -1,14 +1,14 @@
 #include <iostream>
 #include <mutex>
-#include "crtp.h"
+#include "CRTP.h"
 #include "DCLSingleton.h"
 #include "Lock.h"
 #include "Membership.h"
 #include "MeyersSingleton.h"
 #include "NaiveSingleton.h"
-#include "pimpl.h"
+#include "PIMPL.h"
 #include "Resource.h"
-#include "smart.h"
+#include "Smart.h"
 
 
 void test_rsc_adq_init_desin_pattern ()
