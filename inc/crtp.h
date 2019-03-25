@@ -6,7 +6,7 @@
  * class as its template parameter
  * */
 
-
+#pragma once
 
 /*
  * Polymorphism is typically implemented by using virtual functions, this is the normal way that
