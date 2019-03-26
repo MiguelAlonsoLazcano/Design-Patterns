@@ -190,3 +190,16 @@ Use the STL and standard algorithms, use immutable data and pure functions
 * std::remove_copy_if will do 'filter'
 * std::transform does a 'map'
 * std::accumulate for 'reduce'
+
+Functional Error Handling
+- do not throw exceptions
+- always return a value
+- Handle the exception when you want
+
+        auto resutl = parse ("123")
+        if ( result.is_valid()){
+            std:.cout << result.get_value() << std::endl;
+        }
+
+Readings
+    codereview.stackexchange.com
